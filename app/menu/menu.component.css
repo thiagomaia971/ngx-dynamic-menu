@@ -1,0 +1,17 @@
+/*dropdown multilevel INICIO*/
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0px;
+    margin-left: 1px;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+/*dropdown multilevem FIM*/
