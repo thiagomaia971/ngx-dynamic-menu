@@ -12,9 +12,11 @@ var core_1 = require('@angular/core');
 var menu_component_1 = require('./menu/menu.component');
 var http_1 = require('@angular/http');
 require('rxjs/Rx'); // Load all features
+var router_deprecated_1 = require('@angular/router-deprecated');
 var menu_service_1 = require('./menu/menu.service');
 var AppComponent = (function () {
     function AppComponent() {
+        //this.routers.
     }
     AppComponent.prototype.ngOnInit = function () {
     };
@@ -22,9 +24,10 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
-            directives: [menu_component_1.MontarMenuComponent],
-            providers: [http_1.HTTP_PROVIDERS, menu_service_1.MenuService]
-        }), 
+            directives: [menu_component_1.MontarMenuComponent, router_deprecated_1.ROUTER_DIRECTIVES],
+            providers: [router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, menu_service_1.MenuService]
+        }),
+        router_deprecated_1.RouteConfig(this.test), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
