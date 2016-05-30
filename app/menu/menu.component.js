@@ -9,23 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var menu_service_1 = require('./menu.service');
 var MontarMenuComponent = (function () {
-    function MontarMenuComponent(_menuService) {
-        this._menuService = _menuService;
+    function MontarMenuComponent() {
     }
     MontarMenuComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this._menuService.getMenu()
-            .subscribe(function (menu) { return _this.menu = menu; }, function (error) { return _this.errors = error; });
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Array)
+    ], MontarMenuComponent.prototype, "menu", void 0);
     MontarMenuComponent = __decorate([
         core_1.Component({
             selector: 'montar-menu',
             templateUrl: './app/menu/menu.component.html',
-            styleUrls: ['./app/menu/menu.component.css']
+            styleUrls: ['./app/menu/menu.component.css'],
+            providers: [MontarMenuComponent]
         }), 
-        __metadata('design:paramtypes', [menu_service_1.MenuService])
+        __metadata('design:paramtypes', [])
     ], MontarMenuComponent);
     return MontarMenuComponent;
 }());

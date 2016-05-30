@@ -15,41 +15,29 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         
         <!-- Fazendo o menu -->
-        <ul class="nav navbar-nav" *ngFor="let item of menu">
-            
-            <!-- Verifica se o item TEM filhos -->
-            <li *ngIf="item.Filhos">
-                
-                <a class="dropdown-toggle" data-toggle="dropdown">
-                    {{item.Nome}} <span class="caret"></span>
-                </a>
-                <!--> Fazendo os Filhos </!-->
-                <ul class="dropdown-menu multi-level" *ngFor="let filho of item.Filhos">
-                    <li>
-                        <a >{{filho.Nome}}</a>
-                    </li>
-                </ul>
-                
-            </li>
-            
-            <!-- Verifica se o item NÃO tem filhos -->
-            <li *ngIf="!item.Filhos">
-                 <a >{{item.Nome}}</a>
-            </li>
-            
-            
-            
-            
-            <!--
-            <li >
-              <a class="dropdown-toggle" data-toggle="dropdown">{{item.Nome}} <span class="caret"></span></a>
-              <ul class="dropdown-menu multi-level" *ngFor="let f of item.Filhos">
-                  <li>
-                      <a class="dropdown-toggle" data-toggle="dropdown">{{f.Nome}} <span class="caret"></span></a>
-                  </li>
+        <ul class="nav navbar-nav main-navigation" >
+            <li *ngFor="let item of menu">  
+              
+              <!-- Verifica se o item TEM filhos -->
+              <ul *ngIf="item.Filhos">
+                  
+                  <a class="dropdown-toggle" data-toggle="dropdown">
+                      {{item.Nome}} <span class="caret"></span>
+                      
+                  </a>
+                  <!--> Fazendo os Filhos class="<dropdown-menu multi-level" </!-->
+                  
+                  <ul *ngFor="let filho of item.Filhos">
+                      {{filho.Nome}}
+                      <montar-menu [menu]='filho'></montar-menu>
+                  </ul>
+                  
               </ul>
-            </li> -->
-        
+              
+              <!-- Verifica se o item NÃO tem filhos -->
+              <a *ngIf="!item.Filhos">{{item.Nome}}</a>
+            </li>
+            
         </ul>
       
       <ul class="nav navbar-nav navbar-right">

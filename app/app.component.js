@@ -13,26 +13,17 @@ var menu_component_1 = require('./menu/menu.component');
 var http_1 = require('@angular/http');
 require('rxjs/Rx'); // Load all features
 var router_deprecated_1 = require('@angular/router-deprecated');
-var core_2 = require('@angular/core');
 var menu_service_1 = require('./menu/menu.service');
-var perfil_component_1 = require('./perfil/perfil.component');
 var AppComponent = (function () {
-    function AppComponent(_menuService) {
-        this._menuService = _menuService;
-        this.routers = [];
+    function AppComponent(menuService) {
+        this.menuService = menuService;
         this.menus = [];
+        this._menuService = menuService;
     }
     AppComponent.prototype.ngOnInit = function () {
         var _this = this;
         this._menuService.getMenu()
             .subscribe(function (menu) { return _this.menus = menu; }, function (error) { return console.info("Error"); });
-        console.info(this.menus);
-        this.menus.forEach(function (x) {
-            return _this.routers.push({
-                path: x.Action, name: x.Nome, component: perfil_component_1.PerfilComponent
-            });
-        });
-        console.info(this.routers);
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -40,8 +31,7 @@ var AppComponent = (function () {
             templateUrl: 'app/app.component.html',
             directives: [menu_component_1.MontarMenuComponent, router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, menu_service_1.MenuService]
-        }),
-        core_2.Injectable(), 
+        }), 
         __metadata('design:paramtypes', [menu_service_1.MenuService])
     ], AppComponent);
     return AppComponent;

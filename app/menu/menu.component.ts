@@ -6,24 +6,21 @@ import { IMenu } from './menu';
 @Component({
     selector: 'montar-menu',
     templateUrl: './app/menu/menu.component.html',
-    styleUrls: ['./app/menu/menu.component.css']
+    styleUrls: ['./app/menu/menu.component.css'],
+    providers: [MontarMenuComponent]
 })
 
 export class MontarMenuComponent implements OnInit {
+    @Input()
     menu: IMenu[];
+    
     errors: string;
     
-    constructor(private _menuService: MenuService) {
+    constructor() {
         
      }
 
     ngOnInit() { 
-        this._menuService.getMenu()
-                .subscribe(
-                    menu => this.menu = menu,
-                    error => this.errors = error
-                );
-            
     }
 
 }

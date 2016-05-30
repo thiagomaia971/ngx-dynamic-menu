@@ -19,6 +19,7 @@ var MenuService = (function () {
     MenuService.prototype.getMenu = function () {
         return this._http.get(this._menuUrl)
             .map(function (response) { return response.json(); })
+            .do(function (data) { return console.log('All: ' + JSON.stringify(data)); })
             .catch(this.handleError);
     };
     MenuService.prototype.handleError = function (error) {

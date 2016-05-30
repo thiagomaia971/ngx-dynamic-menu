@@ -15,7 +15,7 @@ export class MenuService{
     getMenu(): Observable<IMenu[]>{
         return this._http.get(this._menuUrl)
               .map((response: Response) => <IMenu[]> response.json())
-              //.do(data => console.log('All: ' +  JSON.stringify(data)))
+              .do(data => console.log('All: ' +  JSON.stringify(data)))
               .catch(this.handleError);
     }
     
