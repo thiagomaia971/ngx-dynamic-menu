@@ -8,6 +8,7 @@ import { IMenu } from './menu';
     templateUrl: './app/menu/menu.component.html',
     styleUrls: ['./app/menu/menu.component.css']
 })
+
 export class MontarMenuComponent implements OnInit {
     menu: IMenu[];
     errors: string;

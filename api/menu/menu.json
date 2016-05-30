@@ -12,7 +12,7 @@
                     "Id": 2,
                     "ParentId": 1,
                     "Nome": "Perfis",
-                    "Descricao": "",
+                    "Descricao": "PerfilComponent",
                     "Action": "/Administracao/Perfis/",
                     "DisplayOrder": 101,
                     "VisibleInMenu": true,
@@ -26,15 +26,7 @@
                         "Action": "/Administracao/Usuarios/",
                         "DisplayOrder": 102,
                         "VisibleInMenu": true,
-                        "Filhos": [ {
-                                "Id": 4,
-                                "ParentId": 3,
-                                "Nome": "Cadastrar",
-                                "Descricao": "",
-                                "Action": "/Administracao/Cadastrar/",
-                                "DisplayOrder": 10201,
-                                "VisibleInMenu": true
-                            }]
+                        "Filhos": null
                     },
                     {
                         "Id": 5,
