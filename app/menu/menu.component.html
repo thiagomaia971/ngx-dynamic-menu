@@ -1,25 +1,18 @@
+<!--> Iniciando o Menu </!-->
 
-<ul *ngIf="!menu.isChildren" class="nav navbar-nav">
-  <li *ngIf="menu.Filhos">
-      <a href="" tabindex="-1" class="dropdown-toggle" data-toggle="dropdown">
-        {{menu.Nome}} <span class="caret"></span>
-      </a>
-      
-      <montar-menu *ngFor="let filho of menu.Filhos" [menu]="filho" [isChildren]='true'></montar-menu>
-  </li>
-  
-  <li *ngIf="!menu.Filhos">
-    <a href="">
-      {{menu.Nome}}
-    </a>
-  </li>
-  <!--
+<!--> Se tiver filhos adiciona <SPAN> com a classe 'CARET' </!-->
+<a href="" class="dropdown-toggle" data-toggle="dropdown">
+    {{menu.Nome}} <span [class]=' menu.Filhos ? "caret" : ""'></span>
+</a>
 
-  <a href="" *ngIf="!menu.Filhos">
-    {{menu.Nome}}
-  </a>-->
-</ul>
-<ul *ngIf="menu.isChildren" class="dropdown-menu multi-level">
-
+<!--> Montar Filhos </!-->
+<ul *ngIf="menu.Filhos" class="dropdown-menu multi-level">
+    <li *ngFor="let filho of menu.Filhos"
+        [class]='(filho.Filhos && filho.Filhos.length) ? "dropdown-submenu" : ""' >
+      <montar-menu 
+            [menu]="filho" 
+            [isChildren]='true' >
+      </montar-menu>
+    </li>
     
 </ul>

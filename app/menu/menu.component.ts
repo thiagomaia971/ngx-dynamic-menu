@@ -13,6 +13,7 @@ import { IMenu } from './menu';
 export class MontarMenuComponent implements OnInit {
     @Input() 
     menu: IMenu;
+    
     @Input()
     isChildren: boolean;
     

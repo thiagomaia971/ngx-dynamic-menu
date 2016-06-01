@@ -38,7 +38,7 @@
                     {
                         "Id": 5,
                         "ParentId": 1,
-                        "Nome": "Funcionarios",
+                        "Nome": "Test",
                         "Descricao": "",
                         "Action": "/Administracao/Funcionarios/",
                         "DisplayOrder": 103,
@@ -55,24 +55,7 @@
         "Action": "/Clientes/Index/",
         "DisplayOrder": 2,
         "VisibleInMenu": true,
-        "Filhos": [{
-            "Id": 7,
-                        "ParentId": 1,
-                        "Nome": "Test",
-                        "Descricao": "",
-                        "Action": "/Cliente/Test/",
-                        "DisplayOrder": 103,
-                        "VisibleInMenu": true,
-                        "Filhos": null
-        },{
-        "Id": 5,
-                        "ParentId": 1,
-                        "Nome": "Funcionarios",
-                        "Descricao": "",
-                        "Action": "/Administracao/Funcionarios/",
-                        "DisplayOrder": 103,
-                        "VisibleInMenu": true,
-                        "Filhos": null}]
+        "Filhos": null
     }
     
 ]
