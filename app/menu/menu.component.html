@@ -1,58 +1,25 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        
-        <!-- Fazendo o menu -->
-        <ul class="nav navbar-nav main-navigation" >
-            <li *ngFor="let item of menu">  
-              
-              <!-- Verifica se o item TEM filhos -->
-              <ul *ngIf="item.Filhos">
-                  
-                  <a class="dropdown-toggle" data-toggle="dropdown">
-                      {{item.Nome}} <span class="caret"></span>
-                      
-                  </a>
-                  <!--> Fazendo os Filhos class="<dropdown-menu multi-level" </!-->
-                  
-                  <ul *ngFor="let filho of item.Filhos">
-                      {{filho.Nome}}
-                      <montar-menu [menu]='filho'></montar-menu>
-                  </ul>
-                  
-              </ul>
-              
-              <!-- Verifica se o item NÃO tem filhos -->
-              <a *ngIf="!item.Filhos">{{item.Nome}}</a>
-            </li>
-            
-        </ul>
+<ul *ngIf="!menu.isChildren" class="nav navbar-nav">
+  <li *ngIf="menu.Filhos">
+      <a href="" tabindex="-1" class="dropdown-toggle" data-toggle="dropdown">
+        {{menu.Nome}} <span class="caret"></span>
+      </a>
       
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      <montar-menu *ngFor="let filho of menu.Filhos" [menu]="filho" [isChildren]='true'></montar-menu>
+  </li>
+  
+  <li *ngIf="!menu.Filhos">
+    <a href="">
+      {{menu.Nome}}
+    </a>
+  </li>
+  <!--
+
+  <a href="" *ngIf="!menu.Filhos">
+    {{menu.Nome}}
+  </a>-->
+</ul>
+<ul *ngIf="menu.isChildren" class="dropdown-menu multi-level">
+
     
+</ul>

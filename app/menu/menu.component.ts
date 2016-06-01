@@ -7,14 +7,14 @@ import { IMenu } from './menu';
     selector: 'montar-menu',
     templateUrl: './app/menu/menu.component.html',
     styleUrls: ['./app/menu/menu.component.css'],
-    providers: [MontarMenuComponent]
+    directives: [MontarMenuComponent]
 })
 
 export class MontarMenuComponent implements OnInit {
+    @Input() 
+    menu: IMenu;
     @Input()
-    menu: IMenu[];
-    
-    errors: string;
+    isChildren: boolean;
     
     constructor() {
         

@@ -16,14 +16,18 @@ var MontarMenuComponent = (function () {
     };
     __decorate([
         core_1.Input(), 
-        __metadata('design:type', Array)
+        __metadata('design:type', Object)
     ], MontarMenuComponent.prototype, "menu", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], MontarMenuComponent.prototype, "isChildren", void 0);
     MontarMenuComponent = __decorate([
         core_1.Component({
             selector: 'montar-menu',
             templateUrl: './app/menu/menu.component.html',
             styleUrls: ['./app/menu/menu.component.css'],
-            providers: [MontarMenuComponent]
+            directives: [MontarMenuComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], MontarMenuComponent);
