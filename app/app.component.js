@@ -14,6 +14,7 @@ var http_1 = require('@angular/http');
 require('rxjs/Rx'); // Load all features
 var router_deprecated_1 = require('@angular/router-deprecated');
 var menu_service_1 = require('./menu/menu.service');
+var home_component_1 = require('./home/home.component');
 var AppComponent = (function () {
     function AppComponent(menuService) {
         this.menuService = menuService;
@@ -29,9 +30,13 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app/app.component.html',
+            styleUrls: ['app/app.component.css'],
             directives: [menu_component_1.MontarMenuComponent, router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [router_deprecated_1.ROUTER_PROVIDERS, http_1.HTTP_PROVIDERS, menu_service_1.MenuService]
-        }), 
+        }),
+        router_deprecated_1.RouteConfig([
+            { name: "Home", path: "/", component: home_component_1.HomeComponent }
+        ]), 
         __metadata('design:paramtypes', [menu_service_1.MenuService])
     ], AppComponent);
     return AppComponent;

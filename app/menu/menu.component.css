@@ -2,19 +2,26 @@
     position: relative;
 }
 
-.dropdown-submenu>montar-menu>.dropdown-menu {
+.montar-menu > .dropdown-toggle > span {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform:rotate(-90deg);
+}
+
+.montar-menu > .dropdown-toggle:hover > span{
+    opacity: 0.4;
+}
+
+.dropdown-menu .multi-level {
     top: 0;
     left: 100%;
     margin-top: -6px;
     margin-left: -1px;
-    -webkit-border-radius: 0 6px 6px 6px;
-    -moz-border-radius: 0 6px 6px;
     border-radius: 0 6px 6px 6px;
-    background-color: blue;
 }
 
 
-.dropdown-submenu:hover>.dropdown-menu {
+.dropdown-submenu:hover>.montar-menu>.dropdown-menu {
     display: block;
 }
 
@@ -47,3 +54,4 @@
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+

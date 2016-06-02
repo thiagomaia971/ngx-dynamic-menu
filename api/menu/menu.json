@@ -16,14 +16,31 @@
                     "Action": "/Administracao/Perfis/",
                     "DisplayOrder": 101,
                     "VisibleInMenu": true,
-                    "Filhos": [{"Id": 5,
+                    "Filhos": [{
+                        "Id": 5,
                         "ParentId": 1,
                         "Nome": "Funcionarios",
                         "Descricao": "",
                         "Action": "/Administracao/Funcionarios/",
                         "DisplayOrder": 103,
                         "VisibleInMenu": true,
-                        "Filhos": null}]
+                        "Filhos": null},
+                        
+                        {"Id": 5,
+                        "ParentId": 1,
+                        "Nome": "Test",
+                        "Descricao": "",
+                        "Action": "/Administracao/Funcionarios/",
+                        "DisplayOrder": 103,
+                        "VisibleInMenu": true,
+                        "Filhos": [{"Id": 5,
+                            "ParentId": 1,
+                            "Nome": "Test",
+                            "Descricao": "",
+                            "Action": "/Administracao/Funcionarios/",
+                            "DisplayOrder": 103,
+                            "VisibleInMenu": true,
+                            "Filhos": null}]}]
                     },
                     {
                         "Id": 3,

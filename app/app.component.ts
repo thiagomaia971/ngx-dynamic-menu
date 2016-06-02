@@ -7,14 +7,19 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteDefinition } fro
 import { MenuService } from './menu/menu.service';
 import { IMenu } from './menu/menu';
 import { PerfilComponent } from './perfil/perfil.component';
-
+import { HomeComponent } from './home/home.component';
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html',
+    styleUrls: ['app/app.component.css'],
     directives: [MontarMenuComponent, ROUTER_DIRECTIVES],
     providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, MenuService]
 })
+
+@RouteConfig([
+    { name: "Home", path: "/", component: HomeComponent }
+])
 
 export class AppComponent implements OnInit {
     private menus: IMenu[] = [];
