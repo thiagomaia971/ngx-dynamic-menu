@@ -73,11 +73,24 @@ a:hover, a:focus{
             background-color: #FFA219;
             text-decoration: none;
         }
-        .navbar-orange a,
-        .navbar-orange a:hover{
-            color: #FBF0F0;
+        .navbar-orange a{
+            color: #FFE0B2;
             text-decoration: none;
         }
+        .navbar-orange .nav > li > a:hover {
+            text-decoration: none;
+            background-color: transparent;
+            color: #FFF;
+        }
+        .navbar-orange .nav > li > a:focus{
+            background-color: #FFA219;
+            text-decoration: none;
+            color: #FFF;
+        }
+        .dropdown-menu > li a{
+            color: #666666;
+        }
+        
     /* [END] NAVBAR-ORANGE */
     
     @media (min-width: 768px){
@@ -99,8 +112,13 @@ a:hover, a:focus{
         clear: both;
         font-weight: normal;
         /*line-height: 1.42857143;*/
-        color: #333;
+        color: #666666;
         white-space: nowrap;
+    }
+    .dropdown-menu > li > .montar-menu > a:hover{
+        background-color: #eeeeee;
+        color: #141414;
+        text-decoration: none;
     }
 
     /*.dropdown-menu > li > .montar-menu > a:hover,
