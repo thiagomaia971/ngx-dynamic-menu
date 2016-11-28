@@ -1,0 +1,18 @@
+<!--> Iniciando o Menu </!-->
+
+<!--> Se tiver filhos adiciona <SPAN> com a classe 'CARET' </!-->
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    {{menu.Nome}} <span [class]='menu.Filhos ? "pull-rigth caret" : "pull-rigth"'></span>
+</a>
+
+<!--> Montar Filhos </!-->
+<ul *ngIf="menu.Filhos" class="dropdown-menu multi-level">
+    <li *ngFor="let filho of menu.Filhos" 
+        [class]='(filho.Filhos && filho.Filhos.length) ? "dropdown-submenu" : ""' >
+        <montar-menu class="montar-menu"
+                [menu]="filho" 
+                [isChildren]='true' >
+        </montar-menu>
+    </li>
+    
+</ul>
