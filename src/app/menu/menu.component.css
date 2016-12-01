@@ -1,0 +1,30 @@
+.menu-pai > a{
+    color: #777;
+}
+
+.menu-pai > a :hover{
+    color: #333;
+}
+
+.menu-pai{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.montar-menu > a{
+    color: #777;
+}
+
+.item-menu{
+    color: #777;
+    
+}
+
+ul > li{
+    padding: 15px;
+}
+
+.item-menu:hover, .item-menu:focus{
+    color: #333;
+        text-decoration: none;
+}

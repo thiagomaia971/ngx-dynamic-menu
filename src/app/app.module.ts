@@ -6,13 +6,16 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MontarMenuComponent } from "./menu/menu.component";
 
+import { ItemMenuPaiDirective } from "./menu/menu.directive";
+
 import { UnitOfWork } from "../repositories/UnitOfWork";
 import { ItemMenuRepository } from "../repositories/ItemMenuRepository";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MontarMenuComponent
+    MontarMenuComponent,
+    ItemMenuPaiDirective
   ],
   imports: [
     BrowserModule,
